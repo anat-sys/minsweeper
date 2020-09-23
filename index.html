@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>The cool Minesweeper</title>
+    </head>
+
+    <body onload="init()">
+        <h1>The cool minesweeper game</h1>
+            <div class="top-container">
+
+            <div class="timer">
+            </h2>Timer<h2>  
+                <p class="timer">00:00</p>   
+            </div>
+            
+            <div class="next-number">
+            </h2>Next no.<h2> 
+                <p class ="next">1</p>     
+            </div>
+           
+            <div class="radio">
+              
+                <!-- <input onfocus="setGameLevel(16)" type="radio" id="easy" name="level" value="easy">
+                <label for="easy">Easy(16)</label><br>
+                <input onfocus="setGameLevel(25)" type="radio" id="hard" name="level" value="hard">
+                <label for="hard">Hard(25)</label><br>
+                <input onfocus="setGameLevel(36)" type="radio" id="extreme" name="level" value="extreme">
+                <label for="extreme">Extreme(36)</label> -->
+            </div> 
+
+            <div class="reset-game">
+        
+                <button onclick="resetGame()">New Game</button>
+          
+            </div>
+
+        </div>
+                <div>
+                    <table>
+                        <tbody class="board"></tbody>
+                    </table>
+                </div>
+    
+        <script src="js/util.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/mine.js"></script>
+    </body>
+</html>
