@@ -1,11 +1,8 @@
 'use strict';
 // The Model
-var gBoard = {
-    minesAroundCount: 4,
-    isShown: true,
-    isMine: false,
-    isMarked: true,
-};
+const MINE = 'MINE';
+
+var gBoard;
 
 var gLevel = {
     SIZE: 4,
@@ -22,19 +19,29 @@ var gGame = {
 
 // var gSequence = 1;
 
-function initGame() {
-    // gBoard = renderBoard(gBoard);
+function init() {
+    gBoard = buildBoard();
+    renderBoard(gBoard);
+    gGame.isOn = true;
+    markedCount = 0;
+    secsPassed = 0;
 }
 
 function buildBoard() {
     // put the function in the games section later
     var board = [];
-    for (var i = 0; i < 4; i++) {
+    for (var i = 0; i < 16; i++) {
         board.push([]);
-        for (var j = 0; j < 4; j++) {
-           
+        for (var j = 0; j < 16; j++) {
+            board[i][j] = {
+                minesAroundCount: 4,
+                isShown: true,
+                isMine: false,
+                isMarked: true,
+            };
         }
     }
+    console.table(board);
     return board;
 }
 
@@ -54,77 +61,48 @@ function setMinesNegsCount(mat, rowIdx, colIdx) {
 }
 
 //Render the board
-function renderBoard(cellsNum) {
+function renderBoard(board) {
     var strHTML = '';
     var counter = 0;
 
-    var nums = [];
-    for (var i = 1; i <= cellsNum; i++) {
-        nums.push(i);
-    }
-
-    nums = shuffle(nums);
-
-    for (var i = 0; i < Math.sqrt(nums.length); i++) {
+    for (var i = 0; i < Math.sqrt(board.length); i++) {
         strHTML += '<tr>';
-        for (var j = 0; j < Math.sqrt(nums.length); j++) {
-            strHTML += `<td onclick="cellClicked(this, ${nums[counter]})" style="background-color: salmon">`;
-            strHTML += nums[counter];
+        for (var j = 0; j < Math.sqrt(board.length); j++) {
+            strHTML += `<td id="${counter}" style="background-color: salmon">`;
+            strHTML += '';
             strHTML += '</td>';
             counter++;
         }
         strHTML += '</tr>';
     }
-    var elTable = document.querySelector('.board');
-    elTable.innerHTML = strHTML;
+    var elBoard = document.querySelector('.board');
+    elBoard.innerHTML = strHTML;
 }
 
-function cellClicked(elCell, clickedNum) {
-    // cellclicked, i, j
-    console.log(elCell);
-    console.log(1111);
-    console.log(clickedNum);
-    if (clickedNum === gSequence) {
-        console.log('on track, ', clickedNum);
-        elCell.style.backgroundColor = 'green';
-        gSequence++;
-        if (clickedNum === 1) {
-            var elTimer = document.querySelector('.timer');
+// function cellClicked(elCell, i, j) {
 
-            timer(elTimer);
-        }
+// }
 
-        var elNext = document.querySelector('.next');
+// function timer(elTimer) {
+//     var counter = 1;
 
-        if (clickedNum === gLevel) {
-            clearInterval(gInterval);
-            elNext.innerText = 'Win!';
-        } else {
-            elNext.innerText = gSequence;
-        }
-    }
-}
+//     gInterval = setInterval(function () {
+//         var sec = counter % 60;
+//         var min = Math.floor(counter / 60);
 
-function timer(elTimer) {
-    var counter = 1;
+//         sec = zeroize(sec);
+//         min = zeroize(min);
 
-    gInterval = setInterval(function () {
-        var sec = counter % 60;
-        var min = Math.floor(counter / 60);
+//         counter++;
+//         elTimer.innerHTML = `${min}:${sec}`;
+//         // elTimer.innerText = counter;
+//     }, 1000);
+// }
 
-        sec = zeroize(sec);
-        min = zeroize(min);
-
-        counter++;
-        elTimer.innerHTML = `${min}:${sec}`;
-        // elTimer.innerText = counter;
-    }, 1000);
-}
-
-function zeroize(num) {
-    if (num < 10) return '0' + num;
-    else return num;
-}
+// function zeroize(num) {
+//     if (num < 10) return '0' + num;
+//     else return num;
+// }
 
 function cellMarked(elCell) {
     // console.log(elCell);
@@ -149,21 +127,14 @@ function cellMarked(elCell) {
 }
 
 //game ends when all mines are marked and all the other cells are shown
-function cellGameOver () {
-
-}
-
+function cellGameOver() {}
 
 //winds when all the cells
-//  that are not mines are seen and all the mines marked, 
+//  that are not mines are seen and all the mines marked,
 // all other cells are seen
-checkWin () {
+function checkWin() {}
 
-}
-
-function expandShown(board, elCell, i, j) {
-
-}
+function expandShown(board, elCell, i, j) {}
 ////
 //
 //
@@ -186,8 +157,6 @@ function resetGame() {
     var elNext = document.querySelector('.next');
     elNext.innerText = 1;
 }
-
-f;
 
 //sets the game level
 function setGameLevel(level) {

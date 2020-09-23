@@ -29,14 +29,7 @@ body {
     float: left;
 }
 
-.next-number {
-    width: 100px;
-    height: 80px;
-    background-color: rgb(116, 143, 55);
-    float: left;
-}
-
-.next-number {
+.lives {
     width: 100px;
     height: 80px;
     background-color: rgb(116, 143, 55);
