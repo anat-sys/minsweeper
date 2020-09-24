@@ -2,6 +2,9 @@ body {
     background-color: rgb(218, 198, 198);
 }
 
+.board {
+    margin-top: 500px;
+}
 .board td {
     width: 30px;
     height: 30px;
@@ -9,11 +12,10 @@ body {
     transition: 0.5s;
     padding: 14px;
     border-spacing: 50px;
+    margin-top: 300px;
+    background-color: salmon;
 }
 
-.board td:hover {
-    background-color: lightsalmon;
-}
 /* 
 .top-container {
     display: inline-block;
@@ -33,13 +35,6 @@ body {
     width: 100px;
     height: 80px;
     background-color: rgb(116, 143, 55);
-    float: left;
-}
-
-.radio {
-    width: 150px;
-    height: 100px;
-    background-color: rgb(138, 124, 165);
     float: left;
 }
 

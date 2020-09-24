@@ -14,23 +14,18 @@
 
             <div class="timer">
             </h2>Timer<h2>  
-                <p class="timer">00:00</p>   
+                <p class="show-timer">00:00</p>   
             </div>
             
             <div class="lives">
             </h2>Lives<h2> 
-                <p class ="next">1</p>     
+                <p id="lives">3</p>     
             </div>
            
-            <div class="radio">
-              
-            
-                <!-- <input onfocus="setGameLevel(16)" type="radio" id="easy" name="level" value="easy">
-                <label for="easy">Easy(16)</label><br>
-                <input onfocus="setGameLevel(25)" type="radio" id="hard" name="level" value="hard">
-                <label for="hard">Hard(25)</label><br>
-                <input onfocus="setGameLevel(36)" type="radio" id="extreme" name="level" value="extreme">
-                <label for="extreme">Extreme(36)</label> -->
+            <div class="levels">
+            <button onclick="setGameLevel(4)">Beginner (4X4)</button>
+            <button onclick="setGameLevel(8)">Medium (8X8)</button>
+            <button onclick="setGameLevel(12)">Expert (12X12)</button>
             </div> 
 
             <div class="reset-game">
