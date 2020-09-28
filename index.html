@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8"/>
+        <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <link rel="stylesheet" href="css/style.css" />
@@ -11,38 +11,33 @@
     <body onload="init()">
         <h1>The cool minesweeper game</h1>
         <h3>Choose your level and start play!</h3>
-            <div class="top-container">
-
+        <div class="top-container">
             <div class="timer">
-             <h2>Timer</h2>
-             <p class="show-timer">00:00</p>   
+                <h2>Timer</h2>
+                <p class="show-timer">00:00</p>
             </div>
-            
-            <div class="lives">
-            </h2>Lives<h2> 
-                <p id="lives">3</p>     
+
+            <div class="smiley">
+                <p>☺️</p>
             </div>
-           
+
             <div class="levels">
-            <button onclick="setGameLevel(4)">Beginner (4X4)</button>
-            <button onclick="setGameLevel(8)">Medium (8X8)</button>
-            <button onclick="setGameLevel(12)">Expert (12X12)</button>
-            </div> 
+                <button onclick="setGameLevel(4)">Beginner (4X4)</button>
+                <button onclick="setGameLevel(8)">Medium (8X8)</button>
+                <button onclick="setGameLevel(12)">Expert (12X12)</button>
+            </div>
 
             <div class="reset-game">
-        
                 <button onclick="resetGame()">New Game</button>
-          
             </div>
-
         </div>
-                <div>
-                    <table>
-                        <tbody class="board"></tbody>
-                    </table>
-                </div>
-    
+        <div>
+            <table>
+                <tbody class="board"></tbody>
+            </table>
+        </div>
+
         <script src="js/util.js"></script>
-        <script src="js/main.js"></script>   
+        <script src="js/main.js"></script>
     </body>
 </html>

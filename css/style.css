@@ -32,7 +32,6 @@ h3 {
 .top-container {
     display: inline-block;
     width: 200px;
-    border: 1px solid;
     vertical-align: top;
 }
 
@@ -43,13 +42,16 @@ h3 {
     float: left;
 }
 
-.lives {
+.smiley {
     width: 100px;
     height: 80px;
     background-color: rgb(116, 143, 55);
     float: left;
 }
 
+p {
+    font-size: 18px;
+}
 button {
     background-color: #d6790f;
     border: none;
@@ -83,4 +85,9 @@ td.shown {
 .top-container {
     display: inline-block;
     /* position: absolute; */
+}
+
+.levels {
+    display: inline-block;
+    position: absolute;
 }
